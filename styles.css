@@ -4,12 +4,10 @@
 * {
     font-family: 'Bricolage Grotesque', sans-serif;
     text-align: center;
-    margin: 1%;
+    margin: 0;
     padding: 0;
 }
 
 h1 {
-    margin-bottom: 2%;
+    margin: 5px;
 }
-
-
