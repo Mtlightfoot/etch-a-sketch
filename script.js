@@ -28,6 +28,8 @@ function createGrid(pixel) {
         }
     }
 };
+let userInput = 16;
+createGrid(userInput);
 
 const button = document.createElement("button");
 button.id = "button";
@@ -40,13 +42,16 @@ button.style.width = "250px";
 button.style.height = "50px";
 button.style.backgroundColor = "light gray";
 button.style.boxShadow = "0px 2px 3px grey"
-button.addEventListener("mouseover", function(e) {
+button.addEventListener("mouseover", function (e) {
     e.target.style.backgroundColor = "white"
 });
-button.addEventListener("mouseout", function(e) {
+button.addEventListener("mouseout", function (e) {
     e.target.style.backgroundColor = "";
 });
+
+button.addEventListener("click", function (e) {
+    userInput = prompt("Please enter any number between 1 and 100!");
+    createGrid(userInput);
+});
+
 document.body.appendChild(button);
-
-createGrid(100);
-
