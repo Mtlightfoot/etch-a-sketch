@@ -3,25 +3,25 @@ console.log("hello");
 const container = document.createElement("div");
 container.id = "container";
 container.className = "container";
-container.style.maxWidth = "100%";
-container.style.display = "flex";
-container.style.marginLeft = "auto";
-container.style.marginRight = "auto";
-container.style.justifyContent = "center";
+container.style.maxWidth = "500px";
+container.style.maxHeight = "500px";
+container.style.margin = "0 auto";
+container.style.border = "red 2px solid"
 document.body.appendChild(container);
 
-for (let i = 0; i < 16; i++) {
+let pixel = 100;
+
+for (let i = 0; i < pixel; i++) {
     let row = document.createElement("div");
     row.className = "row";
-    row.style.margin = "0";
-    for (let j = 0; j < 16; j++) {
+    row.style.display = "flex";
+    for (let j = 0; j < pixel; j++) {
         let box = document.createElement("div");
         box.className = "box";
+        box.style.flex = "1";
         box.style.backgroundColor = "white";
-        box.style.width = "40px";
-        box.style.height = "40px";
-        box.style.margin = "0";
-        box.style.border = "black 1px solid"
+        box.style.border = "black 1px solid";
+        box.style.aspectRatio = "1 / 1";
         row.appendChild(box);
         box.addEventListener("mouseover", function (e) {
             e.target.style.backgroundColor = "black";
@@ -30,4 +30,5 @@ for (let i = 0; i < 16; i++) {
 
     }
 }
+
 
