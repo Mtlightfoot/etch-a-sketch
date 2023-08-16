@@ -54,8 +54,7 @@ button.addEventListener("click", function (e) {
     do {
         userInput = prompt("Please enter any number between 1 and 100!");
     }
-    while (userInput > 100) {
-    };
+    while (userInput > 100 || userInput < 1);
     function removeAllChildNodes(container) {
         while (container.firstChild) {
             container.removeChild(container.firstChild);
