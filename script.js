@@ -8,6 +8,22 @@ container.style.maxHeight = "600px";
 container.style.margin = "0 auto";
 document.body.appendChild(container);
 
+
+/* random color generator function */
+const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"];
+
+function getRandomNumber() {
+    return Math.floor(Math.random() * hex.length)
+};
+
+function randomColor() {
+    let hexColor = "#";
+    for (let i = 0; i < 6; i++) {
+        hexColor += hex[getRandomNumber()];
+    }
+    return hexColor;
+};
+
 function createGrid(pixel) {
     while (container.firstChild) {
         container.removeChild(container.firstChild);
@@ -25,7 +41,7 @@ function createGrid(pixel) {
             box.style.aspectRatio = "1 / 1";
             row.appendChild(box);
             box.addEventListener("mouseover", function (e) {
-                e.target.style.backgroundColor = "black";
+                e.target.style.backgroundColor = randomColor();
             })
             document.getElementById("container").appendChild(row);
         }
