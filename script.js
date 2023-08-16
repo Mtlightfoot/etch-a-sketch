@@ -9,6 +9,9 @@ container.style.margin = "0 auto";
 document.body.appendChild(container);
 
 function createGrid(pixel) {
+    while (container.firstChild) {
+        container.removeChild(container.firstChild);
+    };
     for (let i = 0; i < pixel; i++) {
         let row = document.createElement("div");
         row.className = "row";
@@ -55,12 +58,6 @@ button.addEventListener("click", function (e) {
         userInput = prompt("Please enter any number between 1 and 100!");
     }
     while (userInput > 100 || userInput < 1);
-    function removeAllChildNodes(container) {
-        while (container.firstChild) {
-            container.removeChild(container.firstChild);
-        }
-    }
-    removeAllChildNodes(container);
     createGrid(userInput);
 });
 
