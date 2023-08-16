@@ -50,7 +50,12 @@ button.addEventListener("mouseout", function (e) {
 });
 
 button.addEventListener("click", function (e) {
-    userInput = prompt("Please enter any number between 1 and 100!");
+    let userInput = 0;
+    do {
+        userInput = prompt("Please enter any number between 1 and 100!");
+    }
+    while (userInput > 100) {
+    };
     function removeAllChildNodes(container) {
         while (container.firstChild) {
             container.removeChild(container.firstChild);
